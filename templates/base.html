@@ -1,0 +1,27 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - PxWe Analytics</title>
+        {% else %}
+        <title>PxWe Analytics</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            PxWe Analytics:
+            <a href="/harvests">Home</a>
+            <a href="/project">Project</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
