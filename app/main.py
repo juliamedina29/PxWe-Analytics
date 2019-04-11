@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib import colors
 import sqlalchemy as sql
 import os
 
@@ -49,28 +47,28 @@ def Average(lst):
 
 #-----------------set up color dictionary-----------------#
 space_colors_dict = {
-    'CIRCULATE':(1.0, 0.97, 0.87),
-    'MEET':(0.71,0.94,0.85),
-    'OPERATE': (0.87,0.87,0.87),
-    'WE': (1.0,0.82,0.415),
-    'WASH': (0.764,0.764,0.764),
-    'WORK':(0.67,0.867,0.905),
-    'SERVE': (0.251,0.752,0.753),
-    'INFRASTRUCTURE': (0.87,0.87,0.87),
-    'THRIVE': (1.0,0.82,0.415),
-    'BASE': (0.87,0.87,0.87),
-    'MEETING': (0.71,0.94,0.85),
-    'OTHER': (0.87,0.87,0.87),
-    'SUPPORT': (0.87,0.87,0.87),
-    'TYPICAL OFFICE': (0.67,0.867,0.905),
-    'WORKSTATIONS': (0.67,0.867,0.905),
-    'EAT & DRINK': (1.0,0.82,0.415),
-    'PLAY': (1.0,0.82,0.415),
-    'HALLWAY': (1.0, 0.97, 0.87),
-    'PHONE ROOM': (1.0,0.82,0.415),
-    'VT': (0.87,0.87,0.87),
-    'BREAKOUT': (0.71,0.94,0.85),
-    'OUTDOOR': (1.0,0.82,0.415),
+    'CIRCULATE':'#FFF7DF',
+    'MEET':'#B7F0D9',
+    'OPERATE': '#E2E2E2',
+    'WE': '#FFD26A',
+    'WASH': '#C3C3C3',
+    'WORK':'#ABDDE7',
+    'SERVE': '#41C0C0',
+    'INFRASTRUCTURE': '#41C0C0',
+    'THRIVE': '#41C0C0',
+    'BASE': '#41C0C0',
+    'MEETING': '#41C0C0',
+    'OTHER': '#41C0C0',
+    'SUPPORT': '#41C0C0',
+    'TYPICAL OFFICE': '#41C0C0',
+    'WORKSTATIONS': '#41C0C0',
+    'EAT & DRINK': '#41C0C0',
+    'PLAY': '#41C0C0',
+    'HALLWAY': '#41C0C0',
+    'PHONE ROOM': '#41C0C0',
+    'VT': '#41C0C0',
+    'BREAKOUT': '#41C0C0',
+    'OUTDOOR': '#41C0C0',
 }
 
 #---------------separate projects----------------#
@@ -84,7 +82,7 @@ proj_count = len(proj_list)
 proj_dfs = []
 for x in range(0, len(proj_list)) :
     indices = rooms['project'] == proj_list[x]
-    proj_dfs.append(rooms.loc[indices,["project", "space_type","sf","desk_count"]])
+    proj_dfs.append(rooms.loc[indices,["project", "space_type","sf","desk_count","floor"]])
 
 #-----------create list of types per project--------------#
 type_list = []

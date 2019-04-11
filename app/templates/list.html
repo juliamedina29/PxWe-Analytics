@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+    <select name="colour" method="GET" action="/project">
+        {% for x in projects %}
+            <option value="{{x}}" SELECTED>{{x}}</option>"
+        {% endfor %}
+    </select>
+    </div>
+{% endblock %}
+
+

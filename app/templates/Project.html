@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <h1>Project: {{ project1.projname }}</h1>
+    <div><p>Desk count: {{ desks.deskcount }}</p></div>
+    <div><p>Number of floors: {{ floors }} floors</p></div>
+    <div><p>Total area: {{ proj_sf }} sf</p></div>
+    <a class="nav-link" href="/graph">Project</a>
+{% endblock %}
